@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Titel</title>
-</head>
-<body>
-Hello
-</body>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>Hello</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	</head>
+	<body>
+		<h1>Hallo {{ name }}!</h1>
+
+	</body>
 </html>
