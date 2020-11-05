@@ -1,0 +1,22 @@
+{% include "header.html" %}
+
+<body>
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3"> Dein Bilderbuch </h1>
+        </div>
+    </div>
+    <div><h2 class="display-3"> Hier kannst du dein Bilderbuch beliebig erstellen und anpassen</h2></div>
+    <div class="container">
+        <div class="row">
+            <form action="/action_page.php">
+                <input type="file" id="myFile" name="filename">
+
+            </form>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</main>
+
+
+{% include "footer.html" %}
