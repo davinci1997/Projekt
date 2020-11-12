@@ -12,20 +12,31 @@
 
 <h1> hier habe ich einen Beispiel für dich gemacht</h1>
 
+<div class="picone">
 <image src="{{ url_for('static', filename='img/image_lion.jpg')}}"></image>
 
 <h3> dieses Bild finde ich schön</h3>
+</div>
 
-<image src="{{ url_for('static', filename='img/image_sky.jpg')}}"></image>
-
-
-<h1> dieses Bild ist auch gut</h1>
-
-
-<image src="{{ url_for('static', filename='img/image_sweet.jpg')}}"></image>
+<div class="pictwo">
+    <image src="{{ url_for('static', filename='img/image_sky.jpg')}}"></image>
+    <h3> dieses Bild ist auch gut</h3>
+</div>
 
 
-<image src="{{ url_for('static', filename='img/image_water.jpg')}}"></image>
+<div class="pictree">
+    <image src="{{ url_for('static', filename='img/image_sweet.jpg')}}"></image>
+     <h3> dieses Bild ist auch gut</h3>
+
+</div>
+
+<div class="picfour">
+    <image src="{{ url_for('static', filename='img/image_water.jpg')}}"></image>
+     <h3> dieses Bild ist auch gut</h3>
+</div>
+
+
+
 
 </body>
 
