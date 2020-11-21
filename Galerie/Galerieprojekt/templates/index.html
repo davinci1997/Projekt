@@ -2,22 +2,30 @@
 
 <body>
 <main role="main">
-    <div class="jumbotron">
-        <div class="container-fluid">
-            <h1 class="display-3"> Deine Galerie </h1>
+    <div class="jumbotron ">
+        <div class="container  ">
+            <h1 class="display-3 titel"> Deine Galerie </h1>
         </div>
     </div>
-    <div><h2 class="display-3"> Auf diese Seite kannnst du deine Bilder hochladen und damit eine Galerie herstellen</h2></div>
 
-    <div class="container">
-        <div class="row">
-             <a href="{{url_for('eingabe') }} ">Galerie herstellen</a>
-        </div><h3 class="display-3"> wenn du eine beispielgalerie anschauen willst, dann kann ich dir meinen Beispiel zeigen</h3>
+    <div class="container-md vorstellung" >
+    <div><h2 class="display-3"> Auf diese Seite kannnst du deine Bilder hochladen und damit eine Galerie erstellen</h2></div>
 
-        <div class="row">
-            <a href="{{url_for('beispiel') }} ">Zum Beispiel</a>
+        <div class="container">
+
+            <a href="{{url_for('eingabe') }} "
+              <button type= "button" class="btn btn-dark btn-lg">Galerie erstellen</button>
+            </a>
+
         </div>
+            <h3 class="display-3"> wenn du eine beispielgalerie anschauen willst, dann kann ich dir meinen Beispiel zeigen</h3>
+
+            <a href="{{url_for('beispiel') }} "
+                <button type= "button" class="btn btn-dark btn-lg">zum beispiel</button>
+            </a>
     </div>
+
+
 </main>
 
 

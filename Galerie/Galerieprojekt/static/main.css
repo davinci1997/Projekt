@@ -1,18 +1,8 @@
-body {
-background-color: green
 
-        }
 
-h1 { color: blue;
-     margin-left: 45%
 
-    }
-
-h2 { color: blue;
-     margin-left: 10%
-
-    }
-
+.herstellen { background-color: #58FAF4
+   }
 .picone { color: blue,
         float: left
         }
@@ -30,5 +20,14 @@ h2 { color: blue;
         }
 
 .picfour {color: blue
+
+        }
+
+.jumbotron { background-color: #F7D358
+
+        }
+.titel { margin-left: 30%;
+
+
 
         }
