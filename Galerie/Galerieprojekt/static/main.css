@@ -1,33 +1,20 @@
 
-
+body { background-color: #1FB1CF
+}
 
 .herstellen { background-color: #58FAF4
    }
-.picone { color: blue,
-        float: left
-        }
 
-.pictwo {color: blue;
-        margin-left: 20%
-
-
-
-
-        }
-
-.pictree {color: blue
-
-        }
-
-.picfour {color: blue
-
-        }
 
 .jumbotron { background-color: #F7D358
 
         }
 .titel { margin-left: 30%;
 
-
-
         }
+
+.bildgrösse { height: auto;
+              width: 80%
+
+
+               }

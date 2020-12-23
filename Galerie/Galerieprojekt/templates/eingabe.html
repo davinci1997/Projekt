@@ -1,25 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{app_name}}</title>
+{% include "header.html" %}
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
-</head>
-<body>
-<h1> Hier kannst du deine Bilder einfügen</h1>
+<div role="main">
+    <main class="jumbotron ">
+        <div class="container  ">
+            <h1 class="display-3 "> Hier kannst du deine Bilder einfügen</h1>
+        </div>
+    </main>
 
-<h2> Denke gut nach welche bilder du einfügen willst</h2>
-<h3> du willst schliesslich nur die schönnsten Bilder einfügen</h3>
-<h3> Du kannst die Bilder ganz einfach aus deinem Ordner auswählen und ich erledige den Rest</h3>
+    <div class="container-md">
+        <div><h2> Denke gut nach welche bilder du einfügen willst.</h2></div>
+        <div><h3> du willst schliesslich nur die schönnsten Bilder einfügen und du kannst nur 4 Bilder einfügen.</h3>
+        </div>
+        <div><h3> Du kannst die Bilder ganz einfach aus deinem Ordner auswählen und ich erledige den Rest.</h3></div>
+    </div>
+    <p></p>
+    <br>
+    <div class="container-md"> <!-- ersten Bild und Kommentar -->
+        <h6> Hier kannst du dein erstes Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+        <p></p>
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_1">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_1"
+                    id="kommentarspeichern_1"
+                       placeholder="Schreibe deinen Kommetar">
+                <button type="submit">Speichern</button>
+            </div>
 
-<br>
-<form action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
+    </div>
+
+     <div class="container-md"> <!-- zweiten Bild und Kommentar -->
+        <h6> Hier kannst du dein zweites Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_2">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_2"
+                    id="kommentarspeichern_2"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
 
 
-</form>
+     </div>
+
+     <div class="container-md"> <!-- dritten Bild und Kommentar -->
+        <h6> Hier kannst du dein drittes Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_3">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_3"
+                    id="kommentarspeichern_3"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
+
+ </div>
+
+     <div class="container-md"> <!-- vierten Bild und Kommentar -->
+        <h6> Hier kannst du dein viertes Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_4">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_4"
+                    id="kommentarspeichern_4"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
+
+ </div>
+
+     <div class="container-md"> <!-- fünften Bild und Kommentar -->
+        <h6> Hier kannst du dein fünftes Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_5">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_5"
+                    id="kommentarspeichern_5"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
+
+ </div>
+
+     <div class="container-md"> <!-- sechsten Bild und Kommentar -->
+        <h6> Hier kannst du dein sechsten Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_6">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_6"
+                    id="kommentarspeichern_6"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
 
 
-</body>
-</html>
+ </div>
+
+     <div class="container-md"> <!-- <!-- siebten Bild und Kommentar --> -->
+        <h6> Hier kannst du dein siebten Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_7">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_7"
+                    id="kommentarspeichern_7"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
+
+ </div>
+
+     <div class="container-md"> <!-- achten Bild und Kommentar -->
+        <h6> Hier kannst du dein achten Bild auswählen</h6>
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+        </form>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="kommentarspeichern_8">Kommentar</label>
+                <input type="text" class="form-control" name="kommentarspeichern_8"
+                    id="kommentarspeichern_8"
+                       placeholder="Schreibe deinen Kommetar">
+
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div>
+        <a>
+            <a href="{{url_for('ausgabe') }} "
+            <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+        </a>
+
+    </div>
+
+
+
+    {% include "footer.html" %}
