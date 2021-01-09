@@ -1,15 +1,13 @@
-import os
-
 from flask import Flask
 from flask import render_template
 from flask import request
-from werkzeug.utils import secure_filename
-from Galerieprojekt.kommentar import ausgeben, ausgeben_2, speichern
+from Galerieprojekt.bildspeichern import takebild
+from Galerieprojekt.kommentar import ausgeben, speichern, erstelle_kommentarliste
 
-bildupload = 'static/img'
-
+bildupload = 'static/img_variable'
 app = Flask("Galerie")
-app.config['bildupload'] = bildupload
+filesname = ['bild_1', 'bild_2', 'bild_3', 'bild_4']
+
 
 @app.route("/", methods=["Get", "Post"])
 def lazy():
@@ -25,26 +23,12 @@ def index():
                            )
 
 
-def takebild(request1):
-    if 'file' not in request1.files:
-        print("Kein Bild vorhanden")
-
-    print("I m here")
-    file = request1.files['file']
-    filename = secure_filename(file.filename)
-    print(filename)
-    file.save(os.path.join(app.config['bildupload'], filename))  # Link erstellen um ein file speichern zu können
-
-
 @app.route("/eingabe", methods=['Get', 'POST'])
 def eingabekommentar():
-
     if request.method == 'POST':
-        bildname = takebild(request)
-        print("i'm here")
-        commit_1 = request.form['kommentarspeichern_3']
-        commit_2 = request.form['kommentarspeichern_4']
-        antwortprogramm = speichern(commit_1, commit_2)
+        kommentarliste = erstelle_kommentarliste(request)
+        takebild(request, app, bildupload, filesname)
+        speichern(kommentarliste)
         return "Gehe zu  ausgabe"
 
     return render_template("eingabe.html",
@@ -63,12 +47,13 @@ def beispiel():
 @app.route("/ausgabe", methods=["GET", "POST"])
 def ausgabe():
     if request.method == 'GET':
-        answer_1 = ausgeben()
-        answer_2 = ausgeben_2()
+        kommdict = ausgeben()
         return render_template("ausgabe.html",
                                app_name="Galerie - Ausgabe",
-                               ausgabe_1=str(answer_1),
-                               ausgabe_2=str(answer_2)
+                               ausgabe_1=kommdict['answer_1'],
+                               ausgabe_2=kommdict['answer_2'],
+                               ausgabe_3=kommdict['answer_3'],
+                               ausgabe_4=kommdict['answer_4']
                                )
 
 

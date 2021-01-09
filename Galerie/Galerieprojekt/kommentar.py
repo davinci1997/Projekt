@@ -1,44 +1,32 @@
 import json
 
 
-def speichern(commit_1, commit_2):
-    try:
-        with open("datenbank.json", "r") as datenbank:
-            eintraege = json.load(datenbank)
-    except:
-        print("ich kann dieses Komentar nicht speichern")
-        eintraege = []
-
-    eintrag = (commit_1, commit_2)
-
-    eintraege.append(eintrag)
-
+def speichern(kommentarliste):
     with open("datenbank.json", "w") as datenbank:
-        json.dump(eintraege, datenbank)
-    return commit_1, commit_2
+        json.dump(kommentarliste, datenbank)
 
 
 def ausgeben():
+    kommentar_dict = {}
     try:
         with open("datenbank.json", "r") as datenbank:
-            eintraege = json.load(datenbank)
-            ubertragung = eintraege[0]
-    except :
-        print("Beim laden konnte keine vorhandene Datenbank gefunden werden")
-        eintrag = []
+            kommentare = json.load(datenbank)
+            index = 1
+            for kommentar in kommentare:
+                kommentar_dict['answer_'+str(index)] = kommentar
+                index = int(index) + 1
 
-    return ubertragung
-
-
-def ausgeben_2():
-    try:
-        with open("datenbank.json", "r") as datenbank:
-            eintraege = json.load(datenbank)
-            ubertragung_2 = eintraege[1]
-
+            print(kommentar_dict)
 
     except:
         print("Beim laden konnte keine vorhandene Datenbank gefunden werden")
-        eintrag = []
 
-    return ubertragung_2
+    return kommentar_dict
+
+
+def erstelle_kommentarliste(request):
+    commentvalue = []
+    for fieldname, value in request.form.items():
+        print(fieldname, value)
+        commentvalue.append(value)
+    return commentvalue
