@@ -1,67 +1,95 @@
 {% include "header.html" %}
 <main role="main">
     <div class="jumbotron ">
-        <div class="container  ">
-            <h1 class="display-3 "> Hier hast du einen Beispiel</h1>
+        <div class="container">
+            <h1 class="display-3 "> Hier hast Du ein Beispiel</h1>
+        </div>
+    </div>
+</main>
+
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/image_lion.jpg')}}" class="bildgrösse"></image>
+            <h3>Der Löwe war schon immer mein Lieblingstier</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/harry.PNG')}}" class="bildgrösse"></image>
+            <h3> Meine Hassliebe zu Python</h3>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container-fluid pic">
+    <div class="row ">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/joke.jpeg')}}" class="bildgrösse"></image>
+            <h3>Im Studium habe ich gelernt, Prioritäten zu setzen</h3>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pic">
+    <div class="row ">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/image_sweet.jpg')}}" class="bildgrösse"></image>
+            <h3> Hier ein Bild von mir und meiner Freundin während eines Spaziergangs</h3>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/cat.jpg')}}" class="bildgrösse"></image>
+            <h3>Da ich nie einen Löwen haben durfte, habe ich mir jetzt eine Katze zugelegt</h3>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/mountain.jpg')}}" class="bildgrösse"></image>
+            <h3>Mein Schulweg von Zürich nach Chur</h3>
+        </div>
+    </div>
+</div>
+
+<p></p>
+
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/mountainbike.jpg')}}" class="bildgrösse"></image>
+            <h3>Ich fahre gerne Mountainbike, aber lebensmüde bin ich auch nicht</h3>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img/skateboard.jpg')}}" class="bildgrösse"></image>
+            <h3>Skaten war früher meine Leidenschaft</h3>
         </div>
     </div>
 
+</div>
+<br>
+<div class="container-fluid">
+    <a href="{{url_for('index') }} ">
+        <button type="submit" class="btn btn-dark btn-lg">Zurück zum Hauptmenü</button>
+    </a>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/image_lion.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/image_sky.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild finde ich schön</h3>
-            </div>
-        </div>
-    </div>
-
-    <p></p>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/image_water.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/image_sweet.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/cat.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/mountain.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild finde ich schön</h3>
-            </div>
-        </div>
-    </div>
-
-    <p></p>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/mountainbike.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-            <div class="col-lg-6">
-                <image src="{{ url_for('static', filename='img/skateboard.jpg')}}" class="bildgrösse"></image>
-                <h3> dieses Bild ist auch gut</h3>
-            </div>
-        </div>
-    </div>
-
-
-    {% include "footer.html" %}
+    <a href="{{url_for('eingabe') }} ">
+        <button type="submit" class="btn btn-dark btn-lg float-right">Galerie ergänzen</button>
+    </a>
+</div>
+<br>
+<br>
+{% include "footer.html" %}

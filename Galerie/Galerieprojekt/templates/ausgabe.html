@@ -1,33 +1,43 @@
 {% include "header.html" %}
 
+<br>
+<main role="main">
+    <div class="jumbotron ">
+        <div class="container">
+            <h1 class="display-3"> Hier ist deine Schöne Galerie </h1>
+        </div>
+    </div>
+</main>
+
+
+{% for commit in kommentar %}
+{% set kommentar_neu = kommentar[loop.index-1] %}  <!--- Loop von ausgabe main Python. Wir wollen bei 0 anfangen --->
+{% set bild = bilder[loop.index-1] %}
+
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-            <image src="{{ url_for('static', filename='img_variable/bild_1.jpg')}}" class="bildgrösse"></image>
-            <h3> {{ausgabe_1}}</h3>
-        </div>
-        <div class="col-lg-6">
-            <image src="{{ url_for('static', filename='img_variable/bild_2.jpg')}}" class="bildgrösse"></image>
-            <h3> {{ausgabe_2}}</h3>
+    <div class="row pic">
+        <div class="col-md">
+            <image src="{{ url_for('static', filename='img_variable/'+bild)}}" class="bildgrösse"></image> <!--- URL zu statische URL abgeändert --->
+            <h3>{{kommentar_neu}}</h3>  <!--- Kommentar von Vorschleife --->
         </div>
     </div>
 </div>
-
-<p></p>
-
+{% endfor %}
+<br>
+<br>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-            <image src="{{ url_for('static', filename='img_variable/bild_3.jpg')}}" class="bildgrösse"></image>
-            <h3> {{ausgabe_3}}</h3>
-        </div>
-        <div class="col-lg-6">
-            <image src="{{ url_for('static', filename='img_variable/bild_4.jpg')}}" class="bildgrösse"></image>
-            <h3> {{ausgabe_4}}</h3>
-        </div>
-    </div>
+
+    <a href="{{url_for('eingabe') }} ">
+        <button type="submit" class="btn btn-dark btn-lg">Galerie ergänzen</button>
+    </a>
+
+    <a href="{{url_for('beispiel') }} ">
+        <button type="submit" class="btn btn-dark btn-lg float-right"> beispiel nochmals anschauen </button>
+    </a>
 </div>
+
+<br>
+
 
 {% include "footer.html" %}
-

@@ -3,32 +3,35 @@
 <body>
 <main role="main">
     <div class="jumbotron ">
-        <div class="container  ">
-            <h1 class="display-3 titel"> Deine Galerie </h1>
-        </div>
-    </div>
-
-    <div class="container-md vorstellung" >
-    <div><h2 class="display-3"> Auf diese Seite kannnst du deine Bilder hochladen und damit eine Galerie erstellen</h2></div>
-
         <div class="container">
-
-            <a href="{{url_for('eingabekommentar') }} ">
-            <button type= "button" class="btn btn-dark btn-lg">Galerie erstellen</button>
-            </a>
-
+            <h1 class="display-3"> Willkommen in Deiner Galerie </h1>
         </div>
-            <h3 class="display-3"> wenn du eine beispielgalerie anschauen willst, dann kann ich dir meinen Beispiel zeigen</h3>
-
-            <a href="{{url_for('beispiel') }} "
-                <button type= "button" class="btn btn-dark btn-lg">zum beispiel</button>
-            </a>
-                <p></p>
-
     </div>
 
+    <div class="clearfix ">
+        <image src="{{ url_for('static', filename='img/indexbild.jpg')}}" class="float-left"></image>
 
+        <div><h3> Auf dieser Seite kannst Du Deine Bilder hochladen und damit eine Galerie
+            erstellen </h3>
+            <a href="{{url_for('eingabe') }} ">
+                <button type="button" class="btn btn-dark btn-lg">Galerie erstellen</button>
+            </a>
+        </div>
+        <br>
+        <br>
+        <div>
+            <h3> Wenn Du Dir eine Beispielgalerie anschauen möchtest, dann kannst Du hier meine Beispielgalerie sehen </h3>
+                    <a href="{{url_for('beispiel') }} ">
+                        <button type="button" class="btn btn-dark btn-lg ">zum Beispiel</button>
+                    </a>
+
+        </div>
+
+    </div>
 </main>
+<br>
+<br>
+<br>
 
 
 {% include "footer.html" %}

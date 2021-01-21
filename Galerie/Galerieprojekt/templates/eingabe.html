@@ -1,57 +1,55 @@
 {% include "header.html" %}
 
 
-<body>
+<br>
+<main role="main">
+    <div class="jumbotron ">
+        <div class="container">
+            <h1 class="display-3 "> Erstelle jetzt Deine eigene Galerie </h1>
+        </div>
+    </div>
+</main>
+<br>
+<br>
+<div class="container-fluid">
 
-<div>
-    <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
 
-        <div class="form-group">
-            <label for="bild_1">hier kanns du deinen ersten Bild und Kommentar speichern</label>
-            <input type="file" class="form-control-file" id="bild_1" name="bild_1">
-        </div>
-        <div class="form-group">
-            <label for="kommentarspeichern_1">Kommentar</label>
-            <input type="text" class="form-control" name="kommentarspeichern_1"
-                   id="kommentarspeichern_1"
-                   placeholder="Schreibe deinen Kommentar">
-        </div>
+            <div class="form-group">
+                <label for="bild">Hier kannst Du Dein erstes Bild mit Kommentar speichern</label>
+                <input type="file" class="form-control-file" id="bild" name="bild">
+            </div>
+            <div class="form-group">
+                <label for="kommentar">Kommentar</label>
+                <input type="text" class="form-control" name="kommentar"
+                       id="kommentar"
+                       placeholder="Schreibe Dein Kommentar">
+            </div>
 
-        <div class="form-group">
-            <label for="bild_2">hier kanns du deinen ersten Bild und Kommentar speichern</label>
-            <input type="file" class="form-control-file" id="bild_2" name="bild_2">
-        </div>
-        <div class="form-group">
-            <label for="kommentarspeichern_2">Kommentar</label>
-            <input type="text" class="form-control" name="kommentarspeichern_2"
-                   id="kommentarspeichern_2"
-                   placeholder="Schreibe deinen Kommentar">
-        </div>
-
-        <div class="form-group">
-            <label for="bild_3">hier kanns du deinen ersten Bild und Kommentar speichern</label>
-            <input type="file" class="form-control-file" id="bild_3" name="bild_3">
-        </div>
-        <div class="form-group">
-            <label for="kommentarspeichern_3">Kommentar</label>
-            <input type="text" class="form-control" name="kommentarspeichern_3"
-                   id="kommentarspeichern_3"
-                   placeholder="Schreibe deinen Kommentar">
-        </div>
-        <div class="form-group">
-            <label for="bild_4">hier kanns du deinen zweiten Bild und Kommentar speichern</label>
-            <input type="file" class="form-control-file" id="bild_4" name="bild_4">
-        </div>
-        <div class="form-group">
-            <label for="kommentarspeichern_4">Kommentar</label>
-            <input type="text" class="form-control" name="kommentarspeichern_4"
-                   id="kommentarspeichern_4"
-                   placeholder="Schreibe deinen Kommentar">
-
-
-            <button type="submit">Speichern</button>
+    <button type="submit" class="btn btn-dark btn-lg">Speichern</button>
     </form>
 </div>
+<br>
+<br>
+<div class="container">
+    <a href="{{url_for('ausgabe') }} ">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Meine Galerie ansehen</button>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <a href="{{url_for('index') }} ">
+        <button type="submit" class="btn btn-dark btn-lg">Zurück zum Hauptmenü</button>
+    </a>
 
+    <a href="{{url_for('beispiel') }} ">
+        <button type="submit" class="btn btn-dark btn-lg float-right ">zum Beispiel</button>
+    </a>
+</div>
+<br>
+<br>
+<br>
 
 {% include "footer.html" %}

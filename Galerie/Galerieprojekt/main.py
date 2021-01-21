@@ -2,11 +2,10 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from Galerieprojekt.bildspeichern import takebild
-from Galerieprojekt.kommentar import ausgeben, speichern, erstelle_kommentarliste
+from Galerieprojekt.kommentar import speichern, erstelle_dict, kommentar_ausgeben, bild_ausgeben
 
 bildupload = 'static/img_variable'
 app = Flask("Galerie")
-filesname = ['bild_1', 'bild_2', 'bild_3', 'bild_4']
 
 
 @app.route("/", methods=["Get", "Post"])
@@ -24,12 +23,11 @@ def index():
 
 
 @app.route("/eingabe", methods=['Get', 'POST'])
-def eingabekommentar():
-    if request.method == 'POST':
-        kommentarliste = erstelle_kommentarliste(request)
-        takebild(request, app, bildupload, filesname)
-        speichern(kommentarliste)
-        return "Gehe zu  ausgabe"
+def eingabe():
+    if request.method == 'POST':     # Methode zum Daten vom Formular aufzunehmen und bearbeiten
+        kommentardict = erstelle_dict(request)  # dictionnary mit Kommentar und Bild für json wird erstellt / kommentar
+        takebild(request, app, bildupload, )  # Funktion zum Bild in img Variable speichern
+        speichern(kommentardict)  # Kommentardict wird in json heruntergeladen
 
     return render_template("eingabe.html",
                            app_name="Galerie - eingabe",
@@ -46,15 +44,14 @@ def beispiel():
 
 @app.route("/ausgabe", methods=["GET", "POST"])
 def ausgabe():
-    if request.method == 'GET':
-        kommdict = ausgeben()
-        return render_template("ausgabe.html",
-                               app_name="Galerie - Ausgabe",
-                               ausgabe_1=kommdict['answer_1'],
-                               ausgabe_2=kommdict['answer_2'],
-                               ausgabe_3=kommdict['answer_3'],
-                               ausgabe_4=kommdict['answer_4']
-                               )
+    if request.method == 'GET':  # Methode zum daten im html laden
+        bild = bild_ausgeben()  # Funktion Zum Bildname von Json herunterzuladen
+        ausgabe_kommentar = kommentar_ausgeben()  # Funktion zum Kommentar von Json herunterzuladen
+    return render_template("ausgabe.html",
+                           app_name="Galerie - Ausgabe",
+                           bilder=bild,
+                           kommentar=ausgabe_kommentar
+                           )
 
 
 if __name__ == "__main__":

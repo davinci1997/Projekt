@@ -1,18 +1,27 @@
 
-body { background-color: #1FB1CF
+body { background-color: #58D68D
 }
 
-.herstellen { background-color: #58FAF4
-   }
+.indexbild { width:500px}
 
-
-.jumbotron { background-color: #F7D358
+.jumbotron { background-color:#2ECC71
 
         }
 .titel { margin-left: 30%;
 
         }
 
-.bildgrösse { height: auto;
-              width: 80%
-               }
+
+
+
+.bildgrösse{display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%}
+
+.pic{margin-left: 15%;
+     margin-right:15%;
+     margin-top: 10%;
+     width: 70%}
+
+
